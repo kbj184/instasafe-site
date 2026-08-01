@@ -47,7 +47,7 @@
   <p>SafeUnfollow works inside your own already-logged-in Instagram session in your browser. It never asks for, sees, or stores your Instagram username, password, or login credentials.</p>
 
   <h2>4. The only external request: license verification</h2>
-  <p>If you activate SafeUnfollow Pro, the extension sends <strong>only your license key</strong> to our payment provider, Gumroad, to verify that your subscription is active. This request contains no Instagram data and no personal information beyond the license key you entered. See <a href="https://gumroad.com/privacy" target="_blank" rel="noopener">Gumroad's privacy policy</a>.</p>
+  <p>If you activate SafeUnfollow Pro, the extension sends <strong>your license key and a random device ID</strong> to our license server at <code>api.finiteorder.com</code>. The device ID is a random identifier your browser generates on first activation; it exists only to count how many devices share one license (limit: 2) and is not linked to you, your Instagram account, or any other service. Our server checks the key against our own records or, for card purchases, against our payment provider Gumroad. This request contains no Instagram data and no personal information beyond the license key you entered. Releasing a device from the extension deletes that device record.</p>
 
   <h2>5. Permissions we request</h2>
   <ul>
@@ -55,7 +55,7 @@
     <li><code>tabs</code> / <code>activeTab</code> — open and detect your Instagram tab to run the analysis and cleanup helper.</li>
     <li><code>notifications</code> — show a system notification when cleanup finishes or is paused.</li>
     <li>Host access to <code>instagram.com</code> — read your following list and assist cleanup on the page.</li>
-    <li>Host access to <code>api.gumroad.com</code> — verify your Pro license key only.</li>
+    <li>Host access to <code>api.finiteorder.com</code> — verify your Pro license key and count the devices using it.</li>
   </ul>
 
   <h2>6. No analytics, no tracking, no ads</h2>
